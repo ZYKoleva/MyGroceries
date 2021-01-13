@@ -1,0 +1,29 @@
+{% extends 'common/base.html' %}
+{% load static %}
+{% block site_style %}
+    <link rel="stylesheet" href="{% static 'style/add_product.css' %}">
+{% endblock %}
+{% block site_content %}
+<form class="sections-add-product" action='{% url 'update product' pk %}' method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    <div class="section-wrapper-ad-product">
+        <div class="form-group">
+            <label for="exampleFormControl">Name your Product</label>
+            {{ product.name }}
+        </div>
+                <div class="form-group">
+            <label for="exampleFormControl">Brand</label>
+            {{ product.brand }}
+        </div>
+        <div class="form-group">
+            <label for="exampleFormControl">Upload Image</label>
+            {{ product.img }}
+        </div>
+        <div class="form-group">
+            <label for="exampleFormControl">Choose Section</label>
+            {{ product.section }}
+        </div>
+    </div>
+<button class="btn btn-info">Update My Product</button>
+</form>
+{% endblock %}

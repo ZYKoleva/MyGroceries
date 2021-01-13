@@ -1,0 +1,48 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Groceries</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;1,100&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Kalam:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'style/base.css' %}">
+    {% block site_style %}
+    {% endblock %}
+{% block site_scripts %}
+{% endblock %}
+</head>
+<body class="root">
+<div class="header-container">
+    <header>
+        <nav class="nav-bar-container">
+            <h1>My Groceries</h1>
+            <ul class="nav-bar-list">
+                {% if user.is_authenticated %}
+                    <li class="nav-list-item">Здравей, <span class="user-name">{{ user.username }}</span></li>
+                    <li class="nav-list-item">
+                        <a class="nav-link" href="{% url 'logout' %}">Изход</a>
+                    </li>
+                {% else %}
+                    <li class="nav-list-item">
+                        <a class="nav-link" href="{% url 'register' %}">Регистрация</a>
+                    </li>
+                    <li class="nav-list-item">
+                        <a class="nav-link" href="{% url 'login' %}">Вход</a>
+                    </li>
+                {% endif %}
+
+            </ul>
+        </nav>
+
+    </header>
+</div>
+
+    {% block site_content %}
+    {% endblock %}
+
+</body>
+</html>

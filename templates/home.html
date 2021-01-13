@@ -1,0 +1,89 @@
+{% extends 'common/base.html' %}
+{% load static %}
+{% block site_style %}
+    <link rel="stylesheet" href="{% static 'style/home.css' %}">
+{% endblock %}
+
+{% block site_content %}
+    <div class="upper-buttons-wrapper">
+        <a href="{% url 'add product' %}" class="btn btn-info add-product">Add New Product</a>
+            <button  class="btn btn-info save-product-changes">Save Changes</button>
+    <a href="{% url 'reset default' %}" class="btn btn-secondary reset-default">Reset Default Settings</a>
+    </div>
+    <div class="content-container">
+
+        <section class="fridge-wrapper">
+            <h3>My Fridge</h3>
+            <section class="meat">
+                {% for prod in meat %}
+                    {% include 'partials/product.html' %}
+                {% endfor %}
+            </section>
+            <section class="dairy">
+                {% for prod in dairy %}
+                    {% include 'partials/product.html' %}
+                {% endfor %}
+            </section>
+            <section class="sea-food">
+                {% for prod in sea_food %}
+                    {% include 'partials/product.html' %}
+                {% endfor %}
+            </section>
+
+            <section class="vegetables">
+                {% for prod in vegetables %}
+                    {% include 'partials/product.html' %}
+                {% endfor %}
+            </section>
+            <section class="fruits">
+                {% for prod in fruits %}
+                    {% include 'partials/product.html' %}
+                {% endfor %}
+            </section>
+            <section class="drinks">
+                {% for prod in drinks %}
+                    {% include 'partials/product.html' %}
+                {% endfor %}
+            </section>
+        </section>
+        <section class="pantry-wrapper">
+            <h3>My Pantry</h3>
+            <section class="pasta">
+                {% for prod in pasta %}
+                    {% include 'partials/product.html' %}
+                {% endfor %}
+            </section>
+            <section class="alcohol">
+                {% for prod in alcohol %}
+                    {% include 'partials/product.html' %}
+                {% endfor %}
+            </section>
+            <section class="jars">
+                {% for prod in jars %}
+                    {% include 'partials/product.html' %}
+                {% endfor %}
+            </section>
+            <section class="cans">
+                {% for prod in cans %}
+                    {% include 'partials/product.html' %}
+                {% endfor %}
+            </section>
+
+            <section class="seasoning">
+                {% for prod in seasoning %}
+                    {% include 'partials/product.html' %}
+                {% endfor %}
+            </section>
+            <section class="others">
+                {% for prod in others %}
+                    {% include 'partials/product.html' %}
+                {% endfor %}
+            </section>
+        </section>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="{% static 'javascript/js.js' %}"></script>
+    <script src="{% static 'javascript/ajax.js' %}"></script>
+
+
+{% endblock %}

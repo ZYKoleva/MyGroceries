@@ -1,0 +1,47 @@
+<div class="product-wrapper">
+    <div class="image-wrapper">
+    <img id={{ prod.id }} class='{{ prod.availability }}' src="{{ prod.img.url }}" alt="">
+    <div id='available-{{ prod.availability }}' class="not-available-mark">X</div>
+    </div>
+    <div class="product-name-brand"><span class="product-name">{{ prod.name }}</span>
+        {% if prod.brand %}
+            от <span class="product-brand">{{ prod.brand }}</span>
+        {% endif %}
+    </div>
+    <div class="product-buttons default-page-buttons">
+        <a  class="delete-product default-page-delete"><i
+                class="fas fa-trash-alt"></i></a>
+
+            <a class="edit-product default-page-edit"><i
+                    class="fas fa-edit"></i>
+            </a>
+
+
+    </div>
+        <form class="edit-create-product">
+        <div class="form-group">
+            <label for="product-name">Name of Product</label>
+            <input type="text" class="form-control" id="product-name" placeholder="">
+        </div>
+        <div class="form-group">
+            <label for="product-brand">Brand</label>
+            <input type="text" class="form-control" id="product-brand" placeholder="">
+        </div>
+        <div class="form-group">
+            <label for="product-image">Image</label>
+            <input type="file" class="form-control-file" id="product-image">
+        </div>
+        <div class="form-group">
+            <label for="product-section">Section</label>
+            <select class="form-control" id="product-section">
+                <option value="Choose category">Choose category</option>
+                <option>Meat</option>
+                <option>Dairy</option>
+                <option>Vegetables</option>
+                <option>Drinks</option>
+                <option>Others</option>
+            </select>
+        </div>
+        <button class="btn btn-info">Update My Product</button>
+    </form>
+</div>
