@@ -1,4 +1,9 @@
-<div class="product-wrapper">
+<div class="zoom-product-wrapper">
+<div class = 'zoom-in-out-icon' id="{{ prod.id }}" >
+    <i class="fa fa-search" aria-hidden="true">
+
+    </i></div>
+<div class="product-wrapper" id="{{ prod.id }}">
     <div class="image-wrapper">
     <img id={{ prod.id }} class='{{ prod.availability }}' src="{{ prod.img.url }}" alt="">
     <div id='available-{{ prod.availability }}' class="not-available-mark">X</div>
@@ -17,5 +22,5 @@
             </a>
         {% endif %}
     </div>
-
+</div>
 </div>
