@@ -1,6 +1,5 @@
 let btnsDelete = document.querySelectorAll('.default-page-delete')
 let btnsEdit = document.querySelectorAll('.default-page-edit')
-let btnAddProduct = document.querySelector('.add-product')
 
 for (const btnDelete of btnsDelete) {
     btnDelete.addEventListener('click', hideElement)
@@ -8,7 +7,7 @@ for (const btnDelete of btnsDelete) {
 
 function hideElement(e) {
     e.preventDefault();
-    let parentEl = this.parentElement.parentElement;
+    let parentEl = this.parentElement.parentElement.parentElement;
     parentEl.style = "display: none;"
 
 }
@@ -18,8 +17,8 @@ for (const btnEdit of btnsEdit) {
     btnEdit.addEventListener('mouseout', hideEditForm)
 }
 
-btnAddProduct.addEventListener('mouseover', showAddForm)
-btnAddProduct.addEventListener('mouseout', hideAddForm)
+// btnAddProduct.addEventListener('mouseover', showAddForm)
+// btnAddProduct.addEventListener('mouseout', hideAddForm)
 
 function showEditForm(e) {
     e.preventDefault();
@@ -40,12 +39,12 @@ function showEditForm(e) {
 
 }
 
-function showAddForm(e) {
-     e.preventDefault();
-      let parentEl = this.parentElement
-     let add_pop_up = parentEl.querySelector('.add-product-popup');
-     add_pop_up.style = "display: block;";
-}
+// function showAddForm(e) {
+//      e.preventDefault();
+//       let parentEl = this.parentElement
+//      let add_pop_up = parentEl.querySelector('.add-product-popup');
+//      add_pop_up.style = "display: block;";
+// }
 
 function hideEditForm(e) {
     e.preventDefault();
@@ -53,13 +52,13 @@ function hideEditForm(e) {
     let edit_pop_up = parentEl.querySelector('.edit-create-product');
     edit_pop_up.style = "display: none;";
 }
-
-function hideAddForm(e){
-        e.preventDefault();
-    let parentEl = this.parentElement
-    let add_pop_up = parentEl.querySelector('.add-product-popup');
-     add_pop_up.style = "display: none;";
-}
+//
+// function hideAddForm(e){
+//         e.preventDefault();
+//     let parentEl = this.parentElement
+//     let add_pop_up = parentEl.querySelector('.add-product-popup');
+//      add_pop_up.style = "display: none;";
+// }
 
 let img_elements = document.querySelectorAll('.image-wrapper')
 
@@ -98,4 +97,27 @@ function zoomInOut(e) {
     }, 1000);
 }
 
+function openDropDownMenu(){
+
+    let burgerBtnWrapper = document.querySelector('.burger-btn-wrapper')
+    let burgetToggle = document.querySelector('.burger-menu-upper-buttons')
+    burgerBtnWrapper.style.display = 'block';
+    burgetToggle.style.display = 'none'
+}
+
+function closeDropDownMenu(){
+
+    let burgerBtnWrapper = document.querySelector('.burger-btn-wrapper')
+    let burgetToggle = document.querySelector('.burger-menu-upper-buttons')
+    burgerBtnWrapper.style.display = 'none';
+    burgetToggle.style.display = 'block'
+}
+
+function openAddNewProduct(){
+    let AddProdForm = document.querySelector('.add-product-popup')
+    AddProdForm.style.display = 'block';
+    setTimeout(function HideAddProdForm(){
+    AddProdForm.style = "display: none;";
+    }, 1000)
+}
 

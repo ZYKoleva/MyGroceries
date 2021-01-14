@@ -23,6 +23,12 @@ header {
     box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.75);
 }
 
+.nav-bar-container h1{
+    text-decoration: none;
+    font-family: 'Kalam', sans-serif;
+    color: white;
+}
+
 .nav-bar-list {
     display: flex;
     list-style-type: none;

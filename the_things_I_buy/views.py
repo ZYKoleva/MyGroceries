@@ -2,10 +2,12 @@ from django.http import JsonResponse
 from django.shortcuts import render, redirect
 
 from the_things_I_buy.core.add_default_products import add_default_products_to_user
+from the_things_I_buy.core.clean_up_image import clean_up_image_file
 from the_things_I_buy.core.generate_default_products import generate_default_product
 from the_things_I_buy.core.remove_all_created_by_user_products import remove_all_created_by_user_products
 from the_things_I_buy.forms import ProductForm
 from the_things_I_buy.models import Product, MyProducts
+
 
 
 def load_home(request):

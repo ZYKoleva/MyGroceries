@@ -1,0 +1,18 @@
+{#<div class="upper-buttons-wrapper">#}
+{#    <a href="{% url 'add product' %}" class="btn btn-info add-product">Add New Product</a>#}
+{#    <button class="btn btn-info save-product-changes">Save Changes</button>#}
+{#    <a href="{% url 'reset default' %}" class="btn btn-secondary reset-default">Reset Default Settings</a>#}
+{#</div>#}
+
+<div class="burger-menu-upper-buttons" onclick="openDropDownMenu()">
+    <i class="fas fa-bars"></i>
+
+</div>
+ <div class="burger-btn-wrapper">
+        <a href="" class="drop-down-menu-closebtn" onclick="closeDropDownMenu()">&times;</a>
+        <div class="btn-wrapper-links">
+        <a href="{% url 'add product' %}" class="add-product">Add New Product</a>
+        <a class="save-product-changes">Save Changes</a>
+        <a href="{% url 'reset default' %}" class="reset-default">Reset Default Settings</a>
+        </div>
+    </div>

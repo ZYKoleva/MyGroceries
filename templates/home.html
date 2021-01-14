@@ -5,11 +5,7 @@
 {% endblock %}
 
 {% block site_content %}
-    <div class="upper-buttons-wrapper">
-        <a href="{% url 'add product' %}" class="btn btn-info add-product">Add New Product</a>
-            <button  class="btn btn-info save-product-changes">Save Changes</button>
-    <a href="{% url 'reset default' %}" class="btn btn-secondary reset-default">Reset Default Settings</a>
-    </div>
+    {% include 'partials/add-save-reset-buttons.html' %}
     <div class="content-container">
 
         <section class="fridge-wrapper">

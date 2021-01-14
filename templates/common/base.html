@@ -19,7 +19,7 @@
 <div class="header-container">
     <header>
         <nav class="nav-bar-container">
-            <h1>My Groceries</h1>
+            <a href="{% url 'load home page' %}"><h1>My Groceries</h1></a>
             <ul class="nav-bar-list">
                 {% if user.is_authenticated %}
                     <li class="nav-list-item">Здравей, <span class="user-name">{{ user.username }}</span></li>

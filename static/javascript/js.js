@@ -34,3 +34,17 @@ function zoomInOut(e){
 
 
 }
+
+function openDropDownMenu(){
+    let burgerBtnWrapper = document.querySelector('.burger-btn-wrapper')
+    let burgetToggle = document.querySelector('.burger-menu-upper-buttons')
+    burgerBtnWrapper.style.display = 'block';
+    burgetToggle.style.display = 'none'
+}
+
+function closeDropDownMenu(){
+    let burgerBtnWrapper = document.querySelector('.burger-btn-wrapper')
+    let burgetToggle = document.querySelector('.burger-menu-upper-buttons')
+    burgerBtnWrapper.style.display = 'none';
+    burgetToggle.style.display = 'block'
+}
