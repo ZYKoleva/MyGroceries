@@ -5,25 +5,25 @@
 {% endblock %}
 {% block site_content %}
     <div class="container-register">
-        <h5 class="register-title">Вход</h5>
-        <p class="redirect-to-register-wrapper">Ако нямате създаден профил, регистрирайте се <a
-                href="{% url 'register' %}">тук</a></p>
+        <h5 class="register-title">Login</h5>
+        <p class="redirect-to-register-wrapper">If you don't have a profile, click <a
+                href="{% url 'register' %}">register</a></p>
         <form action="{% url 'login' %}" method="post" class="form-register">
             {% csrf_token %}
             <div class="form-group ">
                 <div class="error-messages-wrapper">
                     <p class="error-messages-text">{{ wrong_credentials|striptags }}</p>
                 </div>
-                <label for="exampleInputEmail1">Потребителско име</label>
+                <label for="exampleInputEmail1">Username</label>
                 {{ login_form.username }}
 
             </div>
             <div class="form-group">
-                <label for="exampleInputEmail1">Парола</label>
+                <label for="exampleInputEmail1">Password</label>
                 {{ login_form.password }}
 
             </div>
-            <button class="btn btn-info btn-register-submit">Влез</button>
+            <button class="btn btn-info btn-register-submit">Login</button>
         </form>
     </div>
 {% endblock %}

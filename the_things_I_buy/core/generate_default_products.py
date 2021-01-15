@@ -14,6 +14,7 @@ def generate_default_product():
         'jars': [prod for prod in default_products_list if prod.section.name == 'Jars'],
         'cans': [prod for prod in default_products_list if prod.section.name == 'Cans'],
         'sea_food': [prod for prod in default_products_list if prod.section.name == 'Sea Food'],
+        'sweets': [prod for prod in default_products_list if prod.section.name == 'Sweets'],
         'others': [prod for prod in default_products_list if prod.section.name == 'Others'],
     }
     return context

@@ -22,7 +22,7 @@ def login_user(request):
                 return redirect('load home page')
             else:
                 context = {
-                    'wrong_credentials': 'Потребителското име и/или паролата не съвпадат. Моля опитайте пак',
+                    'wrong_credentials': 'Username and/or password don\'t match. Please try again.',
                     'login_form': login_form
                 }
                 return render(request, 'login.html', context)

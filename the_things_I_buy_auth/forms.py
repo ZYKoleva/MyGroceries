@@ -18,7 +18,7 @@ class RegisterForm(forms.Form):
         username = self.cleaned_data['username']
         result = User.objects.filter(username=username)
         if result.count():
-            raise ValidationError("Потребителското име вече е заето. Моля изберете друго потребителско име")
+            raise ValidationError("Username is already taken. Please chose another one.")
         return username
 
     def clean_password2(self):
@@ -26,7 +26,7 @@ class RegisterForm(forms.Form):
         password2 = self.cleaned_data.get('password2')
 
         if password1 and password2 and password1 != password2:
-            raise ValidationError("Паролите не съвпадат. Моля въведете ги отново.")
+            raise ValidationError("Passwords don't match. Please try again.")
 
         return password2
 

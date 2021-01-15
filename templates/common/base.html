@@ -22,16 +22,16 @@
             <a href="{% url 'load home page' %}"><h1>My Groceries</h1></a>
             <ul class="nav-bar-list">
                 {% if user.is_authenticated %}
-                    <li class="nav-list-item">Здравей, <span class="user-name">{{ user.username }}</span></li>
+                    <li class="nav-list-item"><span class="user-name">{{ user.username }}'groceries</span></li>
                     <li class="nav-list-item">
-                        <a class="nav-link" href="{% url 'logout' %}">Изход</a>
+                        <a class="nav-link" href="{% url 'logout' %}">Logout</a>
                     </li>
                 {% else %}
                     <li class="nav-list-item">
-                        <a class="nav-link" href="{% url 'register' %}">Регистрация</a>
+                        <a class="nav-link" href="{% url 'register' %}">Register</a>
                     </li>
                     <li class="nav-list-item">
-                        <a class="nav-link" href="{% url 'login' %}">Вход</a>
+                        <a class="nav-link" href="{% url 'login' %}">Login</a>
                     </li>
                 {% endif %}
 
