@@ -10,35 +10,47 @@
 
         <section class="fridge-wrapper">
             <h3>My Fridge</h3>
-            <section class="meat">
 
+            <section class="meat">
+                <p>Meat</p>
                 {% for prod in meat %}
                     {% include 'partials/product.html' %}
                 {% endfor %}
             </section>
             <section class="dairy">
+                <p>Dairy</p>
                 {% for prod in dairy %}
                     {% include 'partials/product.html' %}
                 {% endfor %}
             </section>
             <section class="sea-food">
+                <p>Sea Food</p>
                 {% for prod in sea_food %}
                     {% include 'partials/product.html' %}
                 {% endfor %}
             </section>
 
             <section class="vegetables">
+                <p>Vegetables</p>
                 {% for prod in vegetables %}
                     {% include 'partials/product.html' %}
                 {% endfor %}
             </section>
             <section class="fruits">
+                <p>Fruits</p>
                 {% for prod in fruits %}
                     {% include 'partials/product.html' %}
                 {% endfor %}
             </section>
             <section class="drinks">
+                <p>Drinks</p>
                 {% for prod in drinks %}
+                    {% include 'partials/product.html' %}
+                {% endfor %}
+            </section>
+            <section class="others">
+                <p>Others</p>
+                {% for prod in others_fridge %}
                     {% include 'partials/product.html' %}
                 {% endfor %}
             </section>
@@ -46,33 +58,39 @@
         <section class="pantry-wrapper">
             <h3>My Pantry</h3>
             <section class="pasta">
+                <p>Pasta</p>
                 {% for prod in pasta %}
                     {% include 'partials/product.html' %}
                 {% endfor %}
             </section>
             <section class="alcohol">
+                <p>Alcohol</p>
                 {% for prod in alcohol %}
                     {% include 'partials/product.html' %}
                 {% endfor %}
             </section>
             <section class="jars">
+                <p>Jars</p>
                 {% for prod in jars %}
                     {% include 'partials/product.html' %}
                 {% endfor %}
             </section>
             <section class="cans">
+                <p>Cans</p>
                 {% for prod in cans %}
                     {% include 'partials/product.html' %}
                 {% endfor %}
             </section>
 
             <section class="seasoning">
+                <p>Seasoning</p>
                 {% for prod in seasoning %}
                     {% include 'partials/product.html' %}
                 {% endfor %}
             </section>
             <section class="others">
-                {% for prod in others %}
+                <p>Others</p>
+                {% for prod in others_pantry %}
                     {% include 'partials/product.html' %}
                 {% endfor %}
             </section>

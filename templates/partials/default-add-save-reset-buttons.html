@@ -1,40 +1,45 @@
-    <div class="burger-menu-upper-buttons" onclick="openDropDownMenu()">
-    <i class="fas fa-bars"></i>
+<section class="burger-menu-save-btn-wrapper">
 
-</div>
- <div class="burger-btn-wrapper">
+    <div class="burger-menu-upper-buttons" onclick="openDropDownMenu()">
+        <i class="fas fa-bars"></i>
+
+    </div>
+    <div class="burger-btn-wrapper">
         <a href="" class="drop-down-menu-closebtn" onclick="closeDropDownMenu()">&times;</a>
         <div class="btn-wrapper-links">
-        <a class="add-product" onclick="openAddNewProduct()">Add New Product</a>
+            <a class="add-product" onclick="openAddNewProduct()">Add New Product</a>
 
-        <a class="save-product-changes-default">Save Changes</a>
-        <a class="reset-default">Reset Default Settings</a>
+
+            <a class="reset-default">Reset Default Settings</a>
         </div>
 
     </div>
-         <form class="add-product-popup">
-            <div class="form-group">
-                <label for="product-name">Name of Product</label>
-                <input type="text" class="form-control" id="product-name" placeholder="">
-            </div>
-            <div class="form-group">
-                <label for="product-brand">Brand</label>
-                <input type="text" class="form-control" id="product-brand" placeholder="">
-            </div>
-            <div class="form-group">
-                <label for="product-image">Image</label>
-                <input type="file" class="form-control-file" id="product-image">
-            </div>
-            <div class="form-group">
-                <label for="product-section">Section</label>
-                <select class="form-control" id="product-section">
-                    <option value="Choose category">Choose category</option>
-                    <option>Meat</option>
-                    <option>Dairy</option>
-                    <option>Vegetables</option>
-                    <option>Drinks</option>
-                    <option>Others</option>
-                </select>
-            </div>
-            <button class="btn btn-info">Update My Product</button>
-        </form>
+    <form class="add-product-popup">
+        <div class="form-group">
+            <label for="product-name">Name of Product</label>
+            <input type="text" class="form-control" id="product-name" placeholder="">
+        </div>
+        <div class="form-group">
+            <label for="product-brand">Brand</label>
+            <input type="text" class="form-control" id="product-brand" placeholder="">
+        </div>
+        <div class="form-group">
+            <label for="product-image">Image</label>
+            <input type="file" class="form-control-file" id="product-image">
+        </div>
+        <div class="form-group">
+            <label for="product-section">Section</label>
+            <select class="form-control" id="product-section">
+                <option value="Choose category">Choose category</option>
+                <option>Meat</option>
+                <option>Dairy</option>
+                <option>Vegetables</option>
+                <option>Drinks</option>
+                <option>Others</option>
+            </select>
+        </div>
+        <button class="btn btn-info">Update My Product</button>
+    </form>
+
+    <button class="save-product-changes btn btn-info">Save Updates</button>
+</section>

@@ -62,6 +62,17 @@
     border-radius: 4px;
 }
 
+.fridge-wrapper p, .pantry-wrapper p {
+    display: block;
+    width: 100%;
+    text-align: center;
+    font-family: 'Kalam', sans-serif;
+    color: pink;
+    text-shadow: 2px 0 black;
+    font-size: 25px;
+
+}
+
 .fridge-wrapper h3, .pantry-wrapper h3 {
     text-align: center;
     margin: 10px;
@@ -178,10 +189,18 @@
     display: block;
 }
 
-
+.burger-menu-save-btn-wrapper {
+    display: flex;
+    justify-content: space-between;
+        align-items: center;
+}
 .burger-btn-wrapper {
     display: none;
     margin: 50px;
+}
+.save-product-changes {
+    height: fit-content;
+    margin-right: 40px;
 }
 
 .btn-wrapper-links {

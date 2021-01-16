@@ -3,6 +3,7 @@ from django.shortcuts import render, redirect
 
 from the_things_I_buy.core.add_default_products import add_default_products_to_user
 from the_things_I_buy.core.generate_default_products import generate_default_product
+from the_things_I_buy.core.get_context_and_sort import get_context_and_sort
 from the_things_I_buy.core.remove_all_created_by_user_products import remove_all_created_by_user_products
 from the_things_I_buy.forms import ProductForm
 from the_things_I_buy.models import Product, MyProducts
@@ -18,20 +19,7 @@ def load_home(request):
         else:
             my_products_ids = [prod.user_product_id for prod in my_products_user]
             my_products = Product.objects.filter(pk__in=my_products_ids)
-            context = {
-                'meat': [prod for prod in my_products if prod.section.name == 'Meat'],
-                'vegetables': [prod for prod in my_products if prod.section.name == 'Vegetables'],
-                'fruits': [prod for prod in my_products if prod.section.name == 'Fruits'],
-                'dairy': [prod for prod in my_products if prod.section.name == 'Dairy'],
-                'drinks': [prod for prod in my_products if prod.section.name == 'Drinks'],
-                'pasta': [prod for prod in my_products if prod.section.name == 'Pasta'],
-                'alcohol': [prod for prod in my_products if prod.section.name == 'Alcohol'],
-                'jars': [prod for prod in my_products if prod.section.name == 'Jars'],
-                'cans': [prod for prod in my_products if prod.section.name == 'Cans'],
-                'sea_food': [prod for prod in my_products if prod.section.name == 'Sea Food'],
-                'sweets': [prod for prod in my_products if prod.section.name == 'Sweets'],
-                'others': [prod for prod in my_products if prod.section.name == 'Others'],
-            }
+            context = get_context_and_sort(my_products)
             return render(request, 'home.html', context)
 
     else:
