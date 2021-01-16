@@ -1,5 +1,5 @@
 # MyGroceries
-##Web application is built with Django and is using Postgresql for storing data. Bootstrap and custom CSS used. 
+##Web application is built with Django and is using Postgresql for storing data. Bootstrap and custom CSS used. Media queries added 
 ### Users can register, login and logout. Unregistered users can view the default home page
 ### Registered users have assigned default products that they can remove or edit. In addition, registered users can add their own products and reset default settings, if they want to
 ### Structure
