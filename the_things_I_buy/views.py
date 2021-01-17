@@ -11,21 +11,21 @@ from the_things_I_buy.models import Product, MyProducts
 
 
 def load_home(request):
-    # if request.user.is_authenticated:
-    #     my_products_user = MyProducts.objects.filter(created_by=request.user)
-    #     if len(my_products_user) == 0:
-    #         context = add_default_products_to_user(request)
-    #         return render(request, 'home.html', context)
-    #     else:
-    #         my_products_ids = [prod.user_product_id for prod in my_products_user]
-    #         my_products = Product.objects.filter(pk__in=my_products_ids)
-    #         context = get_context_and_sort(my_products)
-    #         return render(request, 'home.html', context)
-    #
-    # else:
-    #     context = generate_default_product()
-    #     return render(request, 'home–default.html', context)
-    return render(request, 'home_test.html')
+    if request.user.is_authenticated:
+        my_products_user = MyProducts.objects.filter(created_by=request.user)
+        if len(my_products_user) == 0:
+            context = add_default_products_to_user(request)
+            return render(request, 'home.html', context)
+        else:
+            my_products_ids = [prod.user_product_id for prod in my_products_user]
+            my_products = Product.objects.filter(pk__in=my_products_ids)
+            context = get_context_and_sort(my_products)
+            return render(request, 'home.html', context)
+
+    else:
+        context = generate_default_product()
+        return render(request, 'home–default.html', context)
+
 
 
 def add_product(request):

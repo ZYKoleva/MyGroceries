@@ -15,7 +15,7 @@ from pathlib import Path
 
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
-# from TheThingsIBuy.secrets import get_my_secret_key
+from TheThingsIBuy.secrets import get_my_secret_key
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -138,6 +138,7 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATIC_ROOT = join(BASE_DIR, 'staticfiles')
+
 STATICFILES_DIRS = (join(BASE_DIR, 'static'),)
 
 MEDIA_URL = '/media/'
