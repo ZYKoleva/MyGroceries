@@ -15,7 +15,7 @@ from pathlib import Path
 
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
-
+from TheThingsIBuy.secrets import get_my_secret_key
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -32,7 +32,7 @@ DEBUG = True
 ALLOWED_HOSTS = [
     'localhost',
     '127.0.0.1',
-    'myprodstat.herokuapp.com'
+    'myprodstat.herokuapp.com',
 ]
 
 
@@ -85,13 +85,17 @@ WSGI_APPLICATION = 'TheThingsIBuy.wsgi.application'
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
 
 DATABASES = {
+    # 'default': {
+    #     'ENGINE': 'django.db.backends.postgresql',
+    #     'NAME': 'the_thigs_I_buy_app_db',
+    #     'USER': 'postgres',
+    #     'PASSWORD': 'password',
+    #     'HOST': '127.0.0.1',
+    #     'PORT': '5433',
+    # }
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'the_thigs_I_buy_app_db',
-        'USER': 'postgres',
-        'PASSWORD': 'password',
-        'HOST': '127.0.0.1',
-        'PORT': '5433',
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
 
