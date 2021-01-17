@@ -15,8 +15,6 @@ from pathlib import Path
 
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
-from TheThingsIBuy.secrets import get_my_secret_key
-
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 
