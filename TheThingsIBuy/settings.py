@@ -31,8 +31,8 @@ DEBUG = True
 
 ALLOWED_HOSTS = [
     'localhost',
-    'http://127.0.0.1',
-    'http://myprodstat.herokuapp.com'
+    '127.0.0.1',
+    'myprodstat.herokuapp.com'
 ]
 
 
