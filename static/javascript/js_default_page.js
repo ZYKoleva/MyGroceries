@@ -17,9 +17,6 @@ for (const btnEdit of btnsEdit) {
     btnEdit.addEventListener('mouseout', hideEditForm)
 }
 
-// btnAddProduct.addEventListener('mouseover', showAddForm)
-// btnAddProduct.addEventListener('mouseout', hideAddForm)
-
 function showEditForm(e) {
     e.preventDefault();
     let parentEl = this.parentElement.parentElement;
@@ -39,26 +36,13 @@ function showEditForm(e) {
 
 }
 
-// function showAddForm(e) {
-//      e.preventDefault();
-//       let parentEl = this.parentElement
-//      let add_pop_up = parentEl.querySelector('.add-product-popup');
-//      add_pop_up.style = "display: block;";
-// }
-
 function hideEditForm(e) {
     e.preventDefault();
     let parentEl = this.parentElement.parentElement;
     let edit_pop_up = parentEl.querySelector('.edit-create-product');
     edit_pop_up.style = "display: none;";
 }
-//
-// function hideAddForm(e){
-//         e.preventDefault();
-//     let parentEl = this.parentElement
-//     let add_pop_up = parentEl.querySelector('.add-product-popup');
-//      add_pop_up.style = "display: none;";
-// }
+
 
 let img_elements = document.querySelectorAll('.image-wrapper')
 
