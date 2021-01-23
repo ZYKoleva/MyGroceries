@@ -16,6 +16,11 @@
     font-size: 15px;
 }
 
+.cute-signs {
+    color: rgb(57, 145, 181);
+    margin-top: -20px;
+}
+
 .reset-default {
     margin-left: 100px;
 }
@@ -87,22 +92,30 @@
 
 }
 
-.add-product {
-    margin: 30px;
+/*.add-product {*/
+/*    height: fit-content;*/
+/*    background-color: rgb(23, 162, 184);*/
+/*    color: white;*/
+/*    padding: 3px 10px;*/
+/*    border-radius: 4px;*/
+/*    margin-bottom: 20px;*/
+/*}*/
+
+/*.save-product-changes {*/
+/*    height: fit-content;*/
+/*    background-color: rgb(23, 162, 184);*/
+/*    color: white;*/
+/*    padding: 3px 10px;*/
+/*    border-radius: 4px;*/
+/*    border: none;*/
+/*    outline: none;*/
+/*}*/
+
+.save-product-changes, .add-product {
+    color:  darkblue;;
+    font-size: 30px;
 }
 
-.burger-menu-upper-buttons {
-    display: block;
-    margin: 50px;
-    color: darkblue;
-    font-size: 40px;
-}
-
-
-.burger-btn-wrapper a {
-    margin: 0;
-    padding: 5px;
-}
 
 .zoom-product-wrapper {
     box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.1);
@@ -118,7 +131,7 @@
 
 .image-wrapper, .image-wrapper-no-click {
     height: 130px;
-    width: 150px;
+
 }
 
 .image-wrapper:hover, .delete-product:hover, .edit-product:hover {
@@ -166,10 +179,9 @@
 
 #available-False {
     display: block;
-    position: absolute;
+    position: relative;
     font-size: 100px;
     color: indianred;
-    margin-left: 50px;
     margin-top: -110px;
 }
 
@@ -192,18 +204,20 @@
 .burger-menu-save-btn-wrapper {
     display: flex;
     justify-content: space-between;
-        align-items: center;
-}
-.burger-btn-wrapper {
-    display: none;
-    margin: 50px;
-}
-.save-product-changes {
-    height: fit-content;
-    margin-right: 40px;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    margin: 10px;
 }
 
-.btn-wrapper-links {
+.burger-btn-wrapper {
+    padding: 5px;
+    display: none;
+    /*margin: 50px;*/
+}
+
+
+.nav-wrapper-links {
     display: flex;
     flex-direction: column;
     margin: 20px;
@@ -216,12 +230,69 @@
     background-color: white;
 }
 
+.nav-wrapper-links li {
+    list-style: none;
+}
+
 .drop-down-menu-closebtn {
     color: indianred;
     font-size: 40px;
     margin-left: 15px;
 
 }
+
+.burger-menu-upper-buttons {
+    display: block;
+    /*margin: 50px;*/
+
+    color: darkblue;
+    font-size: 40px;
+}
+
+.add-save-buttons-sticky {
+    display: flex;
+    background-color: white;
+    margin: 0 10px;
+        align-items: baseline;
+}
+
+.add-save-buttons-sticky .add-product {
+    margin-bottom: 5px;
+    margin-right: 20px;
+}
+
+
+.add-save-buttons-sticky .add-product:hover, .add-save-buttons-sticky .save-product-changes:hover {
+    color: #0056b3;
+    text-decoration: none;
+    border: none;
+    outline: none;
+}
+
+.link-to-scroll {
+    color: darkblue;
+    font-style: italic;
+    font-weight: bolder;
+}
+
+.link-to-scroll:hover {
+    color: darkblue;
+    font-style: italic;
+    font-weight: bolder;
+    font-size: larger;
+}
+    .slider {
+        display: flex;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        overflow-y: hidden;
+    }
+
+    .slider-items {
+        flex-shrink: 0;
+        height: 100%;
+        scroll-snap-align: start;
+    }
 
 @media all and (max-width: 800px) {
     .content-container {
@@ -233,12 +304,13 @@
     .upper-buttons-wrapper {
         display: none;
     }
+
     .burger-menu-upper-buttons {
-    display: block;
-    margin: 50px;
-    color: darkblue;
-    font-size: 40px;
-}
+        display: block;
+        /*margin: 50px;*/
+        color: darkblue;
+        font-size: 40px;
+    }
 
 
     .fridge-wrapper, .pantry-wrapper {
@@ -253,8 +325,26 @@
     }
 
     .zoom-product-wrapper {
-        transform: scale(0.8);
+        display: flex;
+        flex-wrap: wrap;
+        width: 120px;
         box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.1);
+    }
+
+    .product-wrapper {
+        height: 200px;
+        width: 120px;
+        border-radius: 4px;
+        margin: 10px;
+    }
+
+    #available-False {
+        display: block;
+        position: absolute;
+        font-size: 100px;
+        color: indianred;
+        margin-left: 20px;
+        margin-top: -110px;
     }
 
     .add-product-popup {
@@ -280,6 +370,18 @@
         position: relative;
         top: -140px;
         left: -70px;
+    }
+
+    .slider {
+        display: flex;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+    }
+
+    .slider-items {
+        flex-shrink: 0;
+        height: 100%;
+        scroll-snap-align: start;
     }
 }
 
@@ -317,6 +419,16 @@
         top: 270px;
         z-index: 1;
     }
+}
+
+@media all and (max-width: 350px) {
+    .content-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: 0px;
+    }
+
 }
 
 

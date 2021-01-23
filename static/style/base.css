@@ -11,19 +11,28 @@
 
 header {
     background-color: rgb(57, 145, 181);
+    background-image: url('../images/img-stars.JPG');
+    background-repeat: repeat-x;
+}
+.nav-bar-container p {
+    color: pink;
 }
 
+
+.user-name, .nav-bar-ul-wrapper {
+    padding-top: 10px;
+}
 .nav-bar-container {
     display: flex;
     justify-content: space-between;
     align-items: baseline;
-    padding: 20px 100px;
-    font-size: larger;
+    padding: 20px;
     color: white;
     box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.75);
+
 }
 
-.nav-bar-container h1{
+.nav-bar-container h1 {
     text-decoration: none;
     font-family: 'Kalam', sans-serif;
     color: white;
@@ -32,18 +41,46 @@ header {
 .nav-bar-list {
     display: flex;
     list-style-type: none;
-    align-items: baseline;
+    align-items: center;
+    line-height: 50%;
 }
 
 .nav-bar-list li a {
     margin-right: 25px;
     color: white;
+    font-size: 20px;
 }
 
-@media all and (max-width: 700px) {
+.nice-signs {
+    color: pink;
+}
+
+@media all and (max-width: 850px) {
+    .nav-bar-container h1 {
+        text-decoration: none;
+        font-family: 'Kalam', sans-serif;
+        color: white;
+        font-size: 25px;
+    }
+
+
     .nav-bar-container {
         display: flex;
-        flex-direction: column;
         align-items: center;
+        padding: 10px;
+    }
+
+    .nav-bar-list {
+        display: flex;
+        flex-direction: column;
+        list-style-type: none;
+        align-items: flex-end;
+        line-height: normal;
+    }
+
+    .nav-bar-list li a {
+        color: white;
+        font-size: 15px;
+        margin-right: 0;
     }
 }

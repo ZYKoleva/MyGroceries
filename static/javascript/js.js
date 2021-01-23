@@ -48,3 +48,19 @@ function closeDropDownMenu(){
     burgerBtnWrapper.style.display = 'none';
     burgetToggle.style.display = 'block'
 }
+
+let linkToScrollList = document.querySelectorAll('.link-to-scroll')
+
+for (const item of linkToScrollList) {
+    item.addEventListener('click', scrollToElement)
+}
+
+
+function scrollToElement(e){
+    e.preventDefault()
+    let targetSection = this
+    let targetSectionClass = targetSection.getAttribute('id')
+    let elementToScroll = document.getElementsByClassName(targetSectionClass)[0]
+    elementToScroll.scrollIntoView();
+    closeDropDownMenu()
+}

@@ -4,16 +4,38 @@
 {#    <a href="{% url 'reset default' %}" class="btn btn-secondary reset-default">Reset Default Settings</a>#}
 {#</div>#}
 <section class="burger-menu-save-btn-wrapper">
-<div class="burger-menu-upper-buttons" onclick="openDropDownMenu()">
-    <i class="fas fa-bars"></i>
+    <div class="burger-menu-upper-buttons" onclick="openDropDownMenu()">
+        <i class="fas fa-bars"></i>
 
-</div>
- <div class="burger-btn-wrapper">
-        <a href="" class="drop-down-menu-closebtn" onclick="closeDropDownMenu()">&times;</a>
-        <div class="btn-wrapper-links">
-        <a href="{% url 'add product' %}" class="add-product">Add New Product</a>
-        <a href="{% url 'reset default' %}" class="reset-default">Reset Default Settings</a>
-        </div>
     </div>
-<button class="save-product-changes btn btn-info" >Save Updates</button>
-    </section>
+    <div class="burger-btn-wrapper">
+        <a href="" class="drop-down-menu-closebtn" onclick="closeDropDownMenu()">&times;</a>
+        <nav class="nav-wrapper-links">
+            <ul>
+                <li id='meat' class="link-to-scroll">Meat</li>
+
+                <li id='dairy' class="link-to-scroll">Dairy</li>
+                <li id='sea_food' class="link-to-scroll">Sea Food</li>
+                <li id='fruits' class="link-to-scroll">Fruits</li>
+                <li id='drinks' class="link-to-scroll">Drinks</li>
+                <li id='others-fridge' class="link-to-scroll">Others Fridge</li>
+                <li id='meat' class="link-to-scroll">Meat</li>
+                <li id='pasta' class="link-to-scroll">Pasta</li>
+                <li id='alcohol' class="link-to-scroll">Alcohol</li>
+                <li id='jars' class="link-to-scroll">Jars</li>
+                <li id='cans' class="link-to-scroll">Cans</li>
+                <li id='spices' class="link-to-scroll">Spices</li>
+                <li id='others-pantry' class="link-to-scroll">Others Pantry</li>
+
+            </ul>
+            {#        <a href="{% url 'add product' %}" class="add-product">Add New Product</a>#}
+            {#        <a href="{% url 'reset default' %}" class="reset-default">Reset Default Settings</a>#}
+        </nav>
+    </div>
+    <div class="add-save-buttons-sticky">
+
+    <a href="{% url 'add product' %}" class="add-product"><i class="far fa-plus-square"></i></a>
+
+    <i class="fas fa-save save-product-changes"></i>
+        </div>
+</section>

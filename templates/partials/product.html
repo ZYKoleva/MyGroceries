@@ -1,4 +1,4 @@
-<div class="zoom-product-wrapper">
+<div class="zoom-product-wrapper slider-items">
     <div class='zoom-in-out-icon' id="{{ prod.id }}">
         <i class="fa fa-search" aria-hidden="true">
 
@@ -10,11 +10,11 @@
             {% endif %}
             <div id='available-{{ prod.availability }}' class="not-available-mark">X</div>
         </div>
-        <div class="product-name-brand">{{ prod.name }}
-            {% if prod.brand %}
-                от {{ prod.brand }}
-            {% endif %}
-        </div>
+            <div class="product-name-brand"><span class="product-name">{{ prod.name }}</span>
+        {% if prod.brand %}
+            <span class="product-brand">{{ prod.brand }}</span>
+        {% endif %}
+    </div>
         <div class="product-buttons">
             <a href="{% url 'remove product' prod.pk %}" class="delete-product"><i
                     class="fas fa-trash-alt"></i></a>

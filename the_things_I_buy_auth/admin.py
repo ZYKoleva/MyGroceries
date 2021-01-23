@@ -1,3 +1,5 @@
 from django.contrib import admin
 
-# Register your models here.
+from the_things_I_buy_auth.models import UserKeyWord
+
+admin.site.register(UserKeyWord)

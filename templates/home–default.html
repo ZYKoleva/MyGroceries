@@ -7,11 +7,8 @@
 
 {% block site_content %}
     <article class="info-about-site">
-        <p class="text-main">Are you tired of trying to remember what you are missing in your Fridge and Pantry?</p>
-        <p class="text-muted">Now you can keep easily up-to-date availability status of your groceries at home </p>
-        <p class="text-main">Tired of trying to remember what was the brand of that great cheese you bought last
-            week?</p>
-        <p class="text-muted">Make a photo of your favourite product and brand and add your own products</p>
+ <p class="text-main">Track your groceries. Add new. Update default ones</p>
+    <p class="cute-signs">° 𐐪𐑂 ♡ 𐐪𐑂 ₒ 𐐪𐑂 ♡ 𐐪𐑂 °</p>
     </article>
     {% include 'partials/default-add-save-reset-buttons.html' %}
     <div class="content-container">
@@ -20,9 +17,11 @@
             <h3>My Fridge</h3>
             <section class="meat">
                 <p>Meat</p>
+
                 {% for prod in meat %}
                     {% include 'partials/product_default.html' %}
                 {% endfor %}
+
             </section>
             <section class="dairy">
                 <p>Dairy</p>
@@ -46,6 +45,12 @@
             <section class="fruits">
                 <p>Fruits</p>
                 {% for prod in fruits %}
+                    {% include 'partials/product_default.html' %}
+                {% endfor %}
+            </section>
+                    <section class="sauces">
+                <p>Drinks</p>
+                {% for prod in sauces %}
                     {% include 'partials/product_default.html' %}
                 {% endfor %}
             </section>

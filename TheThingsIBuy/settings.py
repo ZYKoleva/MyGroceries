@@ -12,11 +12,11 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 import os
 from os.path import join
 from pathlib import Path
-import django_heroku
+
 
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
-# from TheThingsIBuy.secrets import get_my_secret_key
+from TheThingsIBuy.secrets import get_my_secret_key
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -25,17 +25,12 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = os.environ.get('MY_KEY')
-    # if os.environ.get('MY_KEY') else get_my_secret_key()
+SECRET_KEY = get_my_secret_key()
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = [
-    'localhost',
-    '127.0.0.1',
-    'myprodstat.herokuapp.com',
-]
+ALLOWED_HOSTS = []
 
 
 # Application definition
@@ -89,11 +84,11 @@ WSGI_APPLICATION = 'TheThingsIBuy.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': os.environ.get('DB_NAME'),
-        'USER': os.environ.get('DB_USER'),
-        'PASSWORD': os.environ.get('DB_PASSWORD'),
-        'HOST': os.environ.get('DB_HOST'),
-        'PORT': os.environ.get('DB_PORT'),
+        'NAME': 'my_app_db',
+        'USER': 'postgres',
+        'PASSWORD': 'password',
+        'HOST': 'localhost',
+        'PORT': '5432',
     }
     # 'default': {
     #     'ENGINE': 'django.db.backends.sqlite3',
@@ -138,11 +133,10 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+STATIC_ROOT = ''
 STATIC_URL = "/static/"
 STATICFILES_DIRS = (join(BASE_DIR, 'static'),)
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = join(BASE_DIR, 'media')
 
-django_heroku.settings(locals())

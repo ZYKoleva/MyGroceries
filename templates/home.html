@@ -6,96 +6,124 @@
 
 {% block site_content %}
     {% include 'partials/add-save-reset-buttons.html' %}
-    <div class="content-container">
-
+ <div class="content-container">
         <section class="fridge-wrapper">
             <h3>My Fridge</h3>
 
             <section class="meat">
                 <p>Meat</p>
-                {% for prod in meat %}
-                    {% include 'partials/product.html' %}
-                {% endfor %}
+                <div class="slider">
+                    {% for prod in meat %}
+                        {% include 'partials/product.html' %}
+                    {% endfor %}
+                </div>
             </section>
             <section class="dairy">
                 <p>Dairy</p>
-                {% for prod in dairy %}
-                    {% include 'partials/product.html' %}
-                {% endfor %}
+                <div class="slider">
+                    {% for prod in dairy %}
+                        {% include 'partials/product.html' %}
+                    {% endfor %}
+                </div>
             </section>
             <section class="sea-food">
                 <p>Sea Food</p>
-                {% for prod in sea_food %}
-                    {% include 'partials/product.html' %}
-                {% endfor %}
+                <div class="slider">
+                    {% for prod in sea_food %}
+                        {% include 'partials/product.html' %}
+                    {% endfor %}
+                </div>
             </section>
 
             <section class="vegetables">
                 <p>Vegetables</p>
-                {% for prod in vegetables %}
-                    {% include 'partials/product.html' %}
-                {% endfor %}
+                <div class="slider">
+
+                    {% for prod in vegetables %}
+                        {% include 'partials/product.html' %}
+                    {% endfor %}
+                </div>
             </section>
             <section class="fruits">
                 <p>Fruits</p>
-                {% for prod in fruits %}
-                    {% include 'partials/product.html' %}
-                {% endfor %}
+                <div class="slider">
+                    {% for prod in fruits %}
+                        {% include 'partials/product.html' %}
+                    {% endfor %}
+                </div>
             </section>
             <section class="drinks">
                 <p>Drinks</p>
-                {% for prod in drinks %}
-                    {% include 'partials/product.html' %}
-                {% endfor %}
+                <div class="slider">
+                    {% for prod in drinks %}
+                        {% include 'partials/product.html' %}
+                    {% endfor %}
+                </div>
             </section>
             <section class="others">
                 <p>Others</p>
-                {% for prod in others_fridge %}
-                    {% include 'partials/product.html' %}
-                {% endfor %}
+                <div class="slider">
+                    {% for prod in others_fridge %}
+                        {% include 'partials/product.html' %}
+                    {% endfor %}
+                </div>
             </section>
         </section>
         <section class="pantry-wrapper">
             <h3>My Pantry</h3>
+
             <section class="pasta">
+
                 <p>Pasta</p>
-                {% for prod in pasta %}
-                    {% include 'partials/product.html' %}
-                {% endfor %}
+                <div class="slider">
+                    {% for prod in pasta %}
+                        {% include 'partials/product.html' %}
+                    {% endfor %}
+                </div>
             </section>
             <section class="alcohol">
                 <p>Alcohol</p>
-                {% for prod in alcohol %}
-                    {% include 'partials/product.html' %}
-                {% endfor %}
+                <div class="slider">
+                    {% for prod in alcohol %}
+                        {% include 'partials/product.html' %}
+                    {% endfor %}
+                </div>
             </section>
             <section class="jars">
                 <p>Jars</p>
+             <div class="slider">
                 {% for prod in jars %}
                     {% include 'partials/product.html' %}
                 {% endfor %}
+             </div>
             </section>
             <section class="cans">
                 <p>Cans</p>
+             <div class="slider">
                 {% for prod in cans %}
                     {% include 'partials/product.html' %}
                 {% endfor %}
+             </div>
             </section>
 
             <section class="seasoning">
                 <p>Seasoning</p>
+             <div class="slider">
                 {% for prod in seasoning %}
                     {% include 'partials/product.html' %}
                 {% endfor %}
+             </div>
             </section>
             <section class="others">
                 <p>Others</p>
+             <div class="slider">
                 {% for prod in others_pantry %}
                     {% include 'partials/product.html' %}
                 {% endfor %}
+             </div>
             </section>
         </section>
-    </div>
+ </div>
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
     <script src="{% static 'javascript/js.js' %}"></script>
     <script src="{% static 'javascript/ajax.js' %}"></script>
