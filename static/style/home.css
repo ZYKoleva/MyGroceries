@@ -118,15 +118,23 @@
 
 
 .zoom-product-wrapper {
-    box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-wrap: wrap;
+    width: 150px;
+    height: 250px;
+
+    border-radius: 4px;
+    margin: 5px;
+    padding-bottom: 10px;
+    box-shadow: 0px 0px 5px 0px rgb(57, 145, 181);
 }
+
 
 .product-wrapper {
     height: 200px;
     width: 150px;
-
     border-radius: 4px;
-    margin: 10px;
+
 }
 
 .image-wrapper, .image-wrapper-no-click {
@@ -156,8 +164,11 @@
 .product-wrapper div {
     text-align: center;
     font-family: 'Kalam', sans-serif;
-    min-height: 55px;
-    margin-top: -5px;
+    margin: 0 5px;
+    align-items: baseline;
+}
+.product-name-brand {
+    min-height: 50px;
 }
 
 .product-buttons {
@@ -168,6 +179,25 @@
 .delete-product {
     color: indianred;
 }
+
+.product-counter-wrapper {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-evenly;
+}
+
+.product-counter-add, .product-counter-detract {
+    font-size: 20px;
+}
+
+.product-count {
+    margin: 10px;
+    color: rgb(247, 176, 187);
+    height: fit-content;
+    padding: 2px;
+    border-radius: 2px;
+}
+
 
 .edit-product {
     color: forestgreen;
@@ -290,7 +320,6 @@
 
     .slider-items {
         flex-shrink: 0;
-        height: 100%;
         scroll-snap-align: start;
     }
 
@@ -324,27 +353,25 @@
 
     }
 
-    .zoom-product-wrapper {
-        display: flex;
-        flex-wrap: wrap;
-        width: 120px;
-        box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.1);
-    }
+.zoom-product-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    width: 150px;
+    height: 250px;
 
-    .product-wrapper {
-        height: 200px;
-        width: 120px;
-        border-radius: 4px;
-        margin: 10px;
-    }
+    border-radius: 4px;
+    margin: 5px 5px;
+    padding-bottom: 10px;
+    box-shadow: 0px 0px 5px 0px rgb(57, 145, 181);
+}
+
 
     #available-False {
-        display: block;
-        position: absolute;
-        font-size: 100px;
-        color: indianred;
-        margin-left: 20px;
-        margin-top: -110px;
+    display: block;
+    position: relative;
+    font-size: 100px;
+    color: indianred;
+    margin-top: -110px;
     }
 
     .add-product-popup {
@@ -380,7 +407,6 @@
 
     .slider-items {
         flex-shrink: 0;
-        height: 100%;
         scroll-snap-align: start;
     }
 }

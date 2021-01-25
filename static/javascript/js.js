@@ -5,7 +5,8 @@ for (const img_element of img_elements) {
 }
 
 function updateAvailability(e) {
-    e.preventDefault()
+     e.preventDefault()
+    this.classList.add('modified-availability')
     let img = this.querySelector('img')
     let xMark = this.querySelector('div')
     if (img.className === 'True') {
@@ -63,4 +64,33 @@ function scrollToElement(e){
     let elementToScroll = document.getElementsByClassName(targetSectionClass)[0]
     elementToScroll.scrollIntoView();
     closeDropDownMenu()
+}
+
+let subtractCountEls = document.getElementsByClassName('product-counter-detract')
+let AddCountEls = document.getElementsByClassName('product-counter-add')
+
+for (const subtractEl of subtractCountEls) {
+    subtractEl.addEventListener('click', decreaseCounterAndAddClassModified)
+}
+
+for (const addEl of AddCountEls) {
+    addEl.addEventListener('click', increaseCounterAndAddClassModified)
+}
+
+function increaseCounterAndAddClassModified(e){
+    e.preventDefault();
+    let prodCountWrapper = this.parentNode
+    let counter = prodCountWrapper.querySelector('.product-count')
+    counter.classList.add('modified-quantity')
+    counter.textContent = Number(counter.textContent) + 1
+}
+
+function decreaseCounterAndAddClassModified(e){
+    e.preventDefault();
+    let prodCountWrapper = this.parentNode
+    let counter = prodCountWrapper.querySelector('.product-count')
+    counter.classList.add('modified-quantity')
+    if (Number(counter.textContent) > 0) {
+        counter.textContent = Number(counter.textContent) - 1
+    }
 }

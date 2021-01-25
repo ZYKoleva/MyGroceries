@@ -1,5 +1,6 @@
 from django.http import JsonResponse
 from django.shortcuts import render, redirect
+import json
 
 from the_things_I_buy.core.add_default_products import add_default_products_to_user
 from the_things_I_buy.core.generate_default_products import generate_default_product
@@ -82,6 +83,8 @@ def save_product_changes(request):
     if request.is_ajax and request.method == "GET":
         products_ids_available = request.GET.get('products_ids_available').split(', ')[:-1]
         products_ids_unavailable = request.GET.get('products_ids_unavailable').split(', ')[:-1]
+        dict_modified_items = request.GET.get('dict_modified_items')
+        dict_midified_items_dict = json.loads(dict_modified_items)
         products_available = Product.objects.filter(pk__in=products_ids_available)
         products_unavailable = Product.objects.filter(pk__in=products_ids_unavailable)
         for prod in products_available:
@@ -92,6 +95,10 @@ def save_product_changes(request):
             if prod.availability:
                 prod.availability = False
                 prod.save()
+        for key, value in dict_midified_items_dict.items():
+            prod = Product.objects.get(pk=key)
+            prod.counter = value
+            prod.save()
     return JsonResponse({"valid": False}, status=200)
 
 

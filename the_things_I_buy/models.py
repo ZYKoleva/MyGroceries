@@ -16,6 +16,7 @@ class Product(models.Model):
     section = models.ForeignKey(Section, on_delete=models.CASCADE)
     availability = models.BooleanField(default=True)
     customized_prod = models.BooleanField(default=True)
+    counter = models.IntegerField(default=1)
 
     def __str__(self):
         return self.name

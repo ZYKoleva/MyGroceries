@@ -18,6 +18,14 @@
         <div class="product-buttons">
             <a href="{% url 'remove product' prod.pk %}" class="delete-product"><i
                     class="fas fa-trash-alt"></i></a>
+            <div class="product-counter-wrapper">
+                <div class="product-counter-detract"><i class="fas fa-angle-down"></i></div>
+                <div class="product-count" id="{{ prod.pk }}">
+                {{ prod.counter }}
+                    </div>
+                <div class="product-counter-add"><i class="fas fa-angle-up"></i></div>
+            </div>
+
             {% if prod.customized_prod %}
                 <a href="{% url 'update product' prod.pk %}" class="edit-product"><i
                         class="fas fa-edit"></i>
